@@ -17,7 +17,7 @@
 # along with Splash.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
 project(
     splash 
     VERSION 0.7.21
@@ -86,6 +86,7 @@ pkg_search_module(OPENCV opencv)
 pkg_search_module(JACK jack)
 pkg_search_module(PORTAUDIO portaudio-2.0)
 pkg_search_module(SHMDATA shmdata-1.3)
+pkg_search_module(SDL2 sdl2)
 
 #
 # Configuration
