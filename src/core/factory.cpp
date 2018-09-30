@@ -3,7 +3,6 @@
 #include <json/json.h>
 
 #include "./controller/controller_blender.h"
-#include "./core/link.h"
 #include "./core/scene.h"
 #include "./graphics/camera.h"
 #include "./graphics/filter.h"
@@ -18,6 +17,7 @@
 #include "./image/image_ffmpeg.h"
 #include "./image/queue.h"
 #include "./mesh/mesh.h"
+#include "./network/link.h"
 #include "./sink/sink.h"
 #include "./utils/log.h"
 #include "./utils/timer.h"

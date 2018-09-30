@@ -121,7 +121,6 @@ target_sources(splash-${API_VERSION} PRIVATE
     core/factory.cpp
     core/graph_object.cpp
     core/imagebuffer.cpp
-    core/link.cpp
     core/name_registry.cpp
     core/root_object.cpp
     core/scene.cpp
@@ -161,6 +160,8 @@ target_sources(splash-${API_VERSION} PRIVATE
     image/queue.cpp
     mesh/mesh.cpp
     mesh/mesh_bezierpatch.cpp
+    network/link.cpp
+    network/websocket_client.cpp
     sink/sink.cpp
     userinput/userinput.cpp
     userinput/userinput_dragndrop.cpp

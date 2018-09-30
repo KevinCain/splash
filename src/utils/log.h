@@ -39,7 +39,7 @@
 
 #include "./config.h"
 
-#include "./core/coretypes.h"
+#include "./core/value.h"
 #include "./core/spinlock.h"
 
 #define SPLASH_LOG_FILE "/var/log/splash.log"
