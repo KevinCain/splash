@@ -25,6 +25,7 @@ project(
 )
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+include(CheckIncludeFileCXX)
 
 # Set default build type to Release
 if(NOT CMAKE_BUILD_TYPE)
@@ -81,6 +82,8 @@ elseif(APPLE)
 endif()
 
 find_package(Doxygen)
+find_package(websocketpp)
+CHECK_INCLUDE_FILE_CXX("asio.hpp" ASIO_FOUND)
 pkg_search_module(GPHOTO libgphoto2)
 pkg_search_module(OPENCV opencv)
 pkg_search_module(JACK jack)
@@ -240,6 +243,8 @@ info_cfg_option(JACK_VERSION)
 info_cfg_option(PYTHONLIBS_VERSION_STRING)
 info_cfg_option(SHMDATA_VERSION)
 info_cfg_option(ZMQ_VERSION)
+info_cfg_option(WEBSOCKETPP_FOUND)
+info_cfg_option(ASIO_FOUND)
 info_cfg_option(DATAPATH_SDK_PATH)
 info_cfg_option(DOXYGEN_FOUND)
 info_cfg_option(DEBUG_OPENGL)

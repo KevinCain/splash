@@ -161,7 +161,6 @@ target_sources(splash-${API_VERSION} PRIVATE
     mesh/mesh.cpp
     mesh/mesh_bezierpatch.cpp
     network/link.cpp
-    network/websocket_client.cpp
     sink/sink.cpp
     userinput/userinput.cpp
     userinput/userinput_dragndrop.cpp
@@ -244,6 +243,12 @@ if (PYTHONLIBS_FOUND)
     target_sources(splash-${API_VERSION} PRIVATE
         controller/controller_pythonembedded.cpp
         controller/python/python_sink.cpp
+    )
+endif()
+
+if (WEBSOCKETPP_FOUND AND ASIO_FOUND)
+    target_sources(splash-${API_VERSION} PRIVATE
+        network/websocket_server.cpp
     )
 endif()
 
