@@ -240,7 +240,7 @@ class RootObject : public BaseObject
     /**
      * Propagate the Tree to peers
      */
-    void propagateTree();
+    virtual void propagateTree();
 
     /**
      * Remove a recurring task
