@@ -249,6 +249,7 @@ endif()
 if (HAVE_WEBSOCKETPP)
     target_sources(splash-${API_VERSION} PRIVATE
         network/websocket_server.cpp
+        network/socket_message.cpp
     )
 endif()
 

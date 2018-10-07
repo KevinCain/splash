@@ -1613,7 +1613,7 @@ void World::initializeTree()
 /*************/
 void World::propagateTree()
 {
-    auto treeSeeds = _tree.getSeedList();
+    auto treeSeeds = _tree.getUpdateSeedList();
     if (treeSeeds.empty())
         return;
 
@@ -1621,6 +1621,9 @@ void World::propagateTree()
     Serial::serialize(treeSeeds, serializedSeeds);
     auto dataPtr = reinterpret_cast<uint8_t*>(serializedSeeds.data());
     _link->sendBuffer("_tree", make_shared<SerializedObject>(dataPtr, dataPtr + serializedSeeds.size()));
+#if HAVE_WEBSOCKETPP
+    _websocketServer->queueTreeUpdates(treeSeeds);
+#endif
 }
 
 } // namespace Splash
